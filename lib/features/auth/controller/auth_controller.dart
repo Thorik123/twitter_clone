@@ -4,6 +4,7 @@ import 'package:twitter_clone/apis/auth_api.dart';
 import 'package:twitter_clone/core/core.dart';
 import 'package:twitter_clone/features/auth/view/home_view.dart';
 import 'package:appwrite/models.dart' as model;
+import 'package:twitter_clone/apis/user_api.dart';
 
 final authControllerProvider =
     StateNotifierProvider<AuthController, bool>((ref) {
