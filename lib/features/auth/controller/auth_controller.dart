@@ -92,13 +92,15 @@ class AuthController extends StateNotifier<bool> {
     state = false;
     res.fold(
       (l) => showSnackbar(context, l.message),
-      (r) => Navigator.push(context, HomeView.route()),
+      (r) {
+         Navigator.push(context, HomeView.route());
+      },
     );
   }
 
   Future<UserModel> getUserData(String uid) async {
     final document = await _userAPI.getUserData(uid);
-    final updateUser = UserModel.fromMap(document.data);
-    return updateUser;
+    final updatedUser = UserModel.fromMap(document.data);
+    return updatedUser;
   }
 }
